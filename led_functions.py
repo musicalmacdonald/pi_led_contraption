@@ -1,8 +1,21 @@
-from gpiozero import LED
-from time import sleep
+#from gpiozero import LED
+#from time import sleep
 
+class PiLedContraption:
 
-def blink_led_once(blink_frequency, port):
+    def __init__(self, valid_leds):
+
+    def led_on(self):
+
+    def led_off(self):
+
+    def race_up(self):
+
+    def race_down(self):
+
+    def dance_randomly(self):
+
+'''def blink_led_once(blink_frequency, port):
     """turns the led on for 1/2 the time specified in blink_frequency, then it off for the same amount of time."""
     myLED = LED(port)
 
@@ -41,7 +54,8 @@ def race_led(blink_frequency):
     blink_led_once(blink_frequency, 13)
 
 
-if __name__ == "__main__":
+
+def test_leds():
     print("This will make the LED blink once")
     blink_led_once(2, 18)
 
@@ -49,4 +63,8 @@ if __name__ == "__main__":
     race_led(1)
 
     print("Come on, we can go faster!")
-    race_led(.5)
+    race_led(.5)'''
+
+if __name__ == "__main__":
+    test_class=PiLedContraption()
+        type(test_class)
