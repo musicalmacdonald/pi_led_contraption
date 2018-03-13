@@ -21,39 +21,23 @@ def blink_led_forever(port):
 def race_led_up(blink_frequency):
 
     led_ports = [18, 23, 25, 12, 16, 20, 21, 26, 19, 13]
-
+    
+    p=0
     for i in led_ports:
-        blink_led_once(blink_frequency, led_ports[i])
-    '''
-    # led 1
-    blink_led_once(blink_frequency, 18)
-    # led 2
-    blink_led_once(blink_frequency, 23)
-    # led 3
-    blink_led_once(blink_frequency, 25)
-    # led 4
-    blink_led_once(blink_frequency, 12)
-    # led 5
-    blink_led_once(blink_frequency, 16)
-    # led 6
-    blink_led_once(blink_frequency, 20)
-    # led 7
-    blink_led_once(blink_frequency, 21)
-    # led 8
-    blink_led_once(blink_frequency, 26)
-    # led 9
-    blink_led_once(blink_frequency, 19)
-    # led 10
-    blink_led_once(blink_frequency, 13)
-    '''
+        blink_led_once(blink_frequency, led_ports[p])
+        #print("Activating port:", led_ports[p])
+        p+=1
     
 
 def race_led_down(blink_frequency):
 
     led_ports = [18, 23, 25, 12, 16, 20, 21, 26, 19, 13]
 
+    p=1
     for i in led_ports:
-            blink_led_once(blink_frequency, led_ports[::-i])
+        blink_led_once(blink_frequency, led_ports[-p])
+        #print("Activating port ", led_ports[-p])
+        p+=1
 
 
 def test_leds():
@@ -61,11 +45,14 @@ def test_leds():
     blink_led_once(2, 18)
 
     print("This will make them race")
-    race_led_up(1)
-    race_led_down(1)
+    race_led_up(.5)
+    race_led_down(.5)
 
     print("Come on, we can go faster!")
-    race_led_up(.5)
+    race_led_up(.2)
+    race_led_down(.2)
+    race_led_up(.1)
+    race_led_down(.1)
 
 
 if __name__ == "__main__":
