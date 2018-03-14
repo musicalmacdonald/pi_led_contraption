@@ -16,7 +16,7 @@ class PiLedContraption:
         for i in self._led_ports:
             self._leds.append(LED(i))
         self._led_index_array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-        self._st = .5
+        self._st = .2
 
     def led_on(self, led_index):
         if not 0 <= led_index < 10:
@@ -35,9 +35,10 @@ class PiLedContraption:
             #self._led_ports[led_index] = 0
 
     def race_up(self):
-        for i in _led_index_array:
-            led_on(i)
+        for i in self._led_index_array:
+            self.led_on(i)
             sleep(self._st)
+            self.led_off(i)
             # print("Activating port ", i)
 
     '''def race_down(self):
@@ -57,7 +58,7 @@ if __name__ == "__main__":
     print(type(test))
 
     #test on/off
-    test1= {print("\nTesting LED 0")
+    print("\nTesting LED 0")
     test.led_on(0)
     sleep(.5)
 
