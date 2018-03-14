@@ -7,28 +7,28 @@ from time import sleep
 class PiLedContraption:
 
     _led_ports = []
+    _leds = []
 
     def __init__(self):
 
         self._led_ports = [18, 23, 25, 12, 16, 20, 21, 26, 19, 13]
-
+        for i in self._led_ports:
+            self._leds.append(LED(i))
 
     def led_on(self, led_index):
-
         if not 0 <= led_index < 10:
             print("{} is not a valid LED index".format(led_index))
         else:
             print("LED {} is on.".format(led_index))
-            LED(self._led_ports[led_index]).on()
+            self._led_ports[led_index].on()
             #self._led_ports[led_index] = 1
 
     def led_off(self, led_index):
-
         if not 0 <= led_index < 10:
             print("{} is not a valid LED index".format(led_index))
         else:
             print("LED {} is on.".format(led_index))
-            LED(self._led_ports[led_index]).off()
+            self._led_ports[led_index].off()
             #self._led_ports[led_index] = 0
 
     '''
@@ -47,6 +47,7 @@ class PiLedContraption:
 
     def dance_randomly(self):
         pass
+
 
 if __name__ == "__main__":
     test = PiLedContraption()
