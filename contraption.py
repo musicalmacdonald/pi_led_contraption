@@ -2,7 +2,7 @@
 
 from gpiozero import LED
 from time import sleep
-
+import random
 
 class PiLedContraption:
 
@@ -50,8 +50,15 @@ class PiLedContraption:
             # print("Activating port ", reversed(i))
 
 
-    def dance_randomly(self):
-        pass
+    def dance(self):
+        random.seed()
+        for i in range(0,20):
+            r=random.randint(0,9)
+            self.led_on(r)
+            sleep(self._st)
+            self.led_off(r)
+            sleep (self._st)
+            
 
 
 if __name__ == "__main__":
@@ -78,6 +85,10 @@ if __name__ == "__main__":
     sleep(1)
     print ("\nTesting race down")
     test.race_down()
+    
+    #dance test
+    print ("\nTesting dance dance revolution!")
+    test.dance()
 
 
 
