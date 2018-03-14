@@ -20,7 +20,7 @@ class PiLedContraption:
             print("{} is not a valid LED index".format(led_index))
         else:
             print("LED {} is on.".format(led_index))
-            self._led_ports[led_index].on()
+            self._leds[led_index].on()
             #self._led_ports[led_index] = 1
 
     def led_off(self, led_index):
@@ -28,7 +28,7 @@ class PiLedContraption:
             print("{} is not a valid LED index".format(led_index))
         else:
             print("LED {} is on.".format(led_index))
-            self._led_ports[led_index].off()
+            self._leds[led_index].off()
             #self._led_ports[led_index] = 0
 
     '''
