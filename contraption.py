@@ -22,7 +22,7 @@ class PiLedContraption:
         if not 0 <= led_index < 10:
             print("{} is not a valid LED index".format(led_index))
         else:
-            print("LED {} is on.".format(led_index))
+            #print("LED {} is on.".format(led_index))
             self._leds[led_index].on()
             #self._led_ports[led_index] = 1
 
@@ -30,7 +30,7 @@ class PiLedContraption:
         if not 0 <= led_index < 10:
             print("{} is not a valid LED index".format(led_index))
         else:
-            print("LED {} is on.".format(led_index))
+            #print("LED {} is on.".format(led_index))
             self._leds[led_index].off()
             #self._led_ports[led_index] = 0
 
@@ -41,11 +41,13 @@ class PiLedContraption:
             self.led_off(i)
             # print("Activating port ", i)
 
-    '''def race_down(self):
+    def race_down(self):
         
-        for i in _leds:
-            blink_led_once(blink_frequency, reversed(i))
-            # print("Activating port ", reversed(i))'''
+        for i in reversed(self._led_index_array):
+            self.led_on(i)
+            sleep(self._st)
+            self.led_off(i)
+            # print("Activating port ", reversed(i))
 
 
     def dance_randomly(self):
@@ -71,9 +73,10 @@ if __name__ == "__main__":
     sleep(.5)
 
     #race up/ race down
-    print ("Testing race up")
+    print ("\nTesting race up")
     test.race_up()
-    print ("Testing race down")
+    sleep(1)
+    print ("\nTesting race down")
     test.race_down()
 
 
