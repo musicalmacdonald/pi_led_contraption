@@ -1,6 +1,6 @@
 """This class will create LED functions for use on a web-based application."""
 
-from gpizero import LED
+from gpiozero import LED
 from time import sleep
 
 
@@ -55,8 +55,8 @@ if __name__ == "__main__":
     print("\nTesting LED 0")
     test.led_on(0)
 
-    print("\nTesting LED 0 off")
-    test.led_off(0)
+    '''print("\nTesting LED 0 off")
+    test.led_off(2)
 
     print("\nTesting invalid LED on")
     test.led_on(10)
@@ -68,6 +68,6 @@ if __name__ == "__main__":
     test.led_on(1)
 
     print("\nTesting LED 1 off")
-    test.led_off(1)
+    test.led_off(2)'''
 
 

@@ -29,10 +29,10 @@ def race_led_up(blink_frequency):
 
 def race_led_down(blink_frequency):
 
-    led_ports = [18, 23, 25, 12, 16, 20, 21, 26, 19, 13]
+    led_ports = reversed([18, 23, 25, 12, 16, 20, 21, 26, 19, 13])
 
     for i in led_ports:
-        blink_led_once(blink_frequency, reversed(i))
+        blink_led_once(blink_frequency, i)
         #print("Activating port ", reversed(i))
 
 
