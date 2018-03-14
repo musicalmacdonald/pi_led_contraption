@@ -21,23 +21,19 @@ def blink_led_forever(port):
 def race_led_up(blink_frequency):
 
     led_ports = [18, 23, 25, 12, 16, 20, 21, 26, 19, 13]
-    
-    p=0
+
     for i in led_ports:
-        blink_led_once(blink_frequency, led_ports[p])
-        #print("Activating port:", led_ports[p])
-        p+=1
+        blink_led_once(blink_frequency, i)
+        #print("Activating port:", i)
     
 
 def race_led_down(blink_frequency):
 
     led_ports = [18, 23, 25, 12, 16, 20, 21, 26, 19, 13]
 
-    p=1
     for i in led_ports:
-        blink_led_once(blink_frequency, led_ports[-p])
-        #print("Activating port ", led_ports[-p])
-        p+=1
+        blink_led_once(blink_frequency, reversed(i))
+        #print("Activating port ", reversed(i))
 
 
 def test_leds():
