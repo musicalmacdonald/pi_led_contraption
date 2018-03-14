@@ -55,20 +55,29 @@ if __name__ == "__main__":
 
     print("\nTesting LED 0")
     test.led_on(0)
+    sleep(.5)
 
-    '''print("\nTesting LED 0 off")
-    test.led_off(2)
+    print("\nTesting LED 0 off")
+    test.led_off(0)
+    sleep(.5)
 
     print("\nTesting invalid LED on")
     test.led_on(10)
+    sleep(.5)
 
     print("\nTesting invalid LED off")
     test.led_off(10)
+    sleep(.5)
 
     print("\nTesting LED 1")
     test.led_on(1)
+    sleep(.5)
 
+    print("\nTesting LED 2 off")
+    test.led_off(2)
+    sleep(.5)
+    
     print("\nTesting LED 1 off")
-    test.led_off(2)'''
+    test.led_off(1)
 
 
