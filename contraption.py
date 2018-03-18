@@ -2,7 +2,7 @@
 
 from gpiozero import LED
 from time import sleep
-
+import random
 
 class PiLedContraption:
 
@@ -16,13 +16,13 @@ class PiLedContraption:
         for i in self._led_ports:
             self._leds.append(LED(i))
         self._led_index_array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-        self._st = .5
+        self._st = .2
 
     def led_on(self, led_index):
         if not 0 <= led_index < 10:
             print("{} is not a valid LED index".format(led_index))
         else:
-            print("LED {} is on.".format(led_index))
+            #print("LED {} is on.".format(led_index))
             self._leds[led_index].on()
             #self._led_ports[led_index] = 1
 
@@ -30,7 +30,7 @@ class PiLedContraption:
         if not 0 <= led_index < 10:
             print("{} is not a valid LED index".format(led_index))
         else:
-            print("LED {} is on.".format(led_index))
+            #print("LED {} is on.".format(led_index))
             self._leds[led_index].off()
             #self._led_ports[led_index] = 0
 
@@ -38,17 +38,27 @@ class PiLedContraption:
         for i in self._led_index_array:
             self.led_on(i)
             sleep(self._st)
+            self.led_off(i)
             # print("Activating port ", i)
 
-    '''def race_down(self):
+    def race_down(self):
         
-        for i in _leds:
-            blink_led_once(blink_frequency, reversed(i))
-            # print("Activating port ", reversed(i))'''
+        for i in reversed(self._led_index_array):
+            self.led_on(i)
+            sleep(self._st)
+            self.led_off(i)
+            # print("Activating port ", reversed(i))
 
 
-    def dance_randomly(self):
-        pass
+    def dance(self):
+        random.seed()
+        for i in range(0,20):
+            r=random.randint(0,9)
+            self.led_on(r)
+            sleep(self._st)
+            self.led_off(r)
+            sleep (self._st)
+            
 
 
 if __name__ == "__main__":
@@ -57,7 +67,7 @@ if __name__ == "__main__":
     print(type(test))
 
     #test on/off
-    test1= {print("\nTesting LED 0")
+    print("\nTesting LED 0")
     test.led_on(0)
     sleep(.5)
 
@@ -70,10 +80,15 @@ if __name__ == "__main__":
     sleep(.5)
 
     #race up/ race down
-    print ("Testing race up")
+    print ("\nTesting race up")
     test.race_up()
-    print ("Testing race down")
+    sleep(1)
+    print ("\nTesting race down")
     test.race_down()
+    
+    #dance test
+    print ("\nTesting dance dance revolution!")
+    test.dance()
 
 
 
