@@ -35,8 +35,8 @@ class PiLedContraption:
             #self._led_ports[led_index] = 0
 
     def race_up(self):
-        for i in _led_index_array:
-            led_on(i)
+        for i in self._led_index_array:
+            self.led_on(i)
             sleep(self._st)
             # print("Activating port ", i)
 
