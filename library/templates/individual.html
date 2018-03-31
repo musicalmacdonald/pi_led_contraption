@@ -5,28 +5,32 @@
     <meta charset="UTF-8">
     <title>M^3's Raspberry Pi Control</title>
 
-    <link rel="stylesheet" href="styles.css">
+  <!--<link rel="stylesheet" href="./styles.css" type ="text/css">--> <!--static html-->
+  <link rel="stylesheet" href= "{{ url_for('static',filename='styles/styles.css') }}">
 </head>
-<ul>
-  <li><a href="index.html">Index</a></li>
-  <li><a href="individual.html">Indvidual</a></li>
-  <li><a href="group.html">Group</a></li>
-  <li><a href="patterns.html">Pattern</a></li>
+<ul class="topnav">
+  <li><strong><a href="index.html">Index</a></strong></li>
+  <li><strong><a href="individual.html">Individual</a></strong></li>
+  <li><strong><a href="group.html">Group</a></strong></li>
+  <li><strong><a href="patterns.html">Pattern</a></strong></li>
 </ul>
 <br>
 <br>
-<form>
-  <input type="radio" name="led_number" value="LED 0" > LED 0<br>
-  <input type="radio" name="led_number" value="LED 1" > LED 1<br>
-  <input type="radio" name="led_number" value="LED 2" > LED 2<br>
-  <input type="radio" name="led_number" value="LED 3" > LED 3<br>
-  <input type="radio" name="led_number" value="LED 4" > LED 4<br>
-  <input type="radio" name="led_number" value="LED 5" > LED 5<br>
-  <input type="radio" name="led_number" value="LED 6" > LED 6<br>
-  <input type="radio" name="led_number" value="LED 7" > LED 7<br>
-  <input type="radio" name="led_number" value="LED 8" > LED 8<br>
-  <input type="radio" name="led_number" value="LED 9" > LED 9<br>
+<form action="/individual.html" method="POST">
+  <input type="radio" name="led_number" value="0" checked > LED 0<br>
+  <input type="radio" name="led_number" value="1" > LED 1<br>
+  <input type="radio" name="led_number" value="2" > LED 2<br>
+  <input type="radio" name="led_number" value="3" > LED 3<br>
+  <input type="radio" name="led_number" value="4" > LED 4<br>
+  <input type="radio" name="led_number" value="5" > LED 5<br>
+  <input type="radio" name="led_number" value="6" > LED 6<br>
+  <input type="radio" name="led_number" value="7" > LED 7<br>
+  <input type="radio" name="led_number" value="8" > LED 8<br>
+  <input type="radio" name="led_number" value="9" > LED 9<br>
+
+  <input type="submit" value="Submit">
+
 </form> <br>
-<input type="submit" value="Submit">
+
 </body>
 </html>

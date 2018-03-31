@@ -1,11 +1,13 @@
 """Creates Flask/html interface
 """
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from library.mocpi import contraption
 
 
 app = Flask(__name__)
 
+ledcon = contraption.PiLedContraption()
 
 @app.route('/')
 def index():
@@ -17,7 +19,7 @@ def index_2():
     return render_template('index.html')
 
 
-@app.route('/individual.html')
+@app.route('/individual.html', methods=['GET', 'POST'])
 def individual():
     return render_template("individual.html")
 

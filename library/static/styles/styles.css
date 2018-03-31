@@ -1,25 +1,63 @@
-.ul {
-    position: fixed;
-    top 0;
-    width 50%;
+/*Style sheet for Led control website */
+
+/*both body and h1 etc must be before the ul styling in order to work -- find out why*/
+body {
+     background-color: Green;
+     /*text-align: center;*/
+     font-family: times new roman;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color: #4CAF50;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right,
+    ul.topnav li {float: none;}
+
+/*non-resizing version without topnav class name*/
+/*
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     border: 1px solid #555;
+    background-color: #f3f3f3;
 }
+*/
 li {
     display: block;
-    text-align:center;
+    padding: 8px;
     color: black;
     float: left;
-    background-color: lightgreen;
+    font-weight: bold;
+    border-right:1px solid #bbb;
 }
-body {
-     background-color:Green;
-     text-align:center;
-     font-family:times new roman;
-     }
-.active {
-    background-color: #4CAF50;
-    color: white;
-}
+
+
+
+

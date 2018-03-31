@@ -3,31 +3,14 @@
 <html>
 <head>
   <title>M^3's Raspberry Pi Control</title>
- <!-- <link rel="stylesheet" href="styles.css" type ="text/css"> --->
-  <style>
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align:center;
-}
-li {
-    display: inline;
-    text-align:center;
-    color: black;
-}
-body {
-     background-color:Green;
-     text-align:center;
-     font-family:times new roman;
-     }
-     </style>
-
+ <!--<link rel="stylesheet" href="./styles.css" type ="text/css">--> <!--static html-->
+  <link rel="stylesheet" href= "{{ url_for('static',filename='styles/styles.css') }}">
 </head>
+
 <body>
 <h1>Welcome to the Raspberry Pi Control Website.</h1>
 <h3>Please choose a task.</h3>
-<ul>
+<ul class="topnav">
   <li><strong><a href="index.html">Index</a></strong></li>
   <li><strong><a href="individual.html">Individual</a></strong></li>
   <li><strong><a href="group.html">Group</a></strong></li>
