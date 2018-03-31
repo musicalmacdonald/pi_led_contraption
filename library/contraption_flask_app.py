@@ -21,6 +21,14 @@ def index_2():
 
 @app.route('/individual.html', methods=['GET', 'POST'])
 def individual():
+    if request.method == 'POST':
+        print("You posted")
+        print(request.form)
+        led_number = request.form["led_number"]
+        print(led_number)
+        ledcon.led_on(int(led_number))
+    elif request.method == 'GET':
+        print("Here's your web-page")
     return render_template("individual.html")
 
 
